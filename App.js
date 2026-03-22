@@ -165,6 +165,9 @@ const App = () => {
   const handleLogout = () => {
     setIsAdmin(false);
     setView('home');
+    setAdminUser('');
+    setAdminPass('');
+    setAuthError('');
   };
 
   // Image Upload Handler (Converts to Base64 for Firestore)
@@ -275,7 +278,7 @@ const App = () => {
 
   const displayProducts = products.length > 0 ? products : [{
     id: 'sample',
-    name: "Original Malabar Avilmilk",
+    name: "Original chocolate Avilmilk",
     price: 150,
     image: "https://images.unsplash.com/photo-1544145945-f904253d0c7b?auto=format&fit=crop&q=80&w=800",
     desc: "Experience the authentic creamy taste of Kerala. Prepared in 60 seconds."
@@ -386,7 +389,7 @@ const App = () => {
             <div className="bg-amber-500 p-2 rounded-xl mr-3 shadow-lg shadow-amber-200">
               <Zap className="text-white h-5 w-5" />
             </div>
-            <h1 className="text-2xl font-black tracking-tighter uppercase italic text-stone-900">Malabar <span className="text-amber-500">Avil</span></h1>
+            <h1 className="text-2xl font-black tracking-tighter uppercase italic text-stone-900">Der <span className="text-amber-500">Saftify</span></h1>
           </div>
           
           <div className="flex items-center space-x-4 md:space-x-8">
@@ -432,7 +435,7 @@ const App = () => {
                     <CheckCircle2 className="h-8 w-8 text-green-500" />
                   </div>
                   <h3 className="text-xl font-black text-stone-900 uppercase tracking-tighter leading-none">Order Placed!</h3>
-                  <p className="text-stone-400 text-sm mt-2">Malabar is calling your name.</p>
+                  <p className="text-stone-400 text-sm mt-2">Der Saftify is calling your name.</p>
                 </div>
 
                 <div className="bg-stone-50 p-6 rounded-[2rem] border border-stone-100 mb-8">
@@ -534,7 +537,7 @@ const App = () => {
                     <h3 className="text-2xl font-black flex items-center tracking-tight">
                       <PartyPopper className="w-8 h-8 mr-3 animate-bounce" /> Congratulations!
                     </h3>
-                    <p className="mt-1 font-bold opacity-90">Your Malabar Bliss has been Delivered.</p>
+                    <p className="mt-1 font-bold opacity-90">Your Massive item has been Delivered.</p>
                   </div>
                   <div className="hidden sm:block">
                     <Star className="w-10 h-10 text-amber-300 fill-amber-300" />
@@ -580,14 +583,13 @@ const App = () => {
               <div className="space-y-8 text-center lg:text-left">
                 <span className="inline-block bg-amber-100 text-amber-800 px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-[0.3em]">Official Store</span>
                 <h2 className="text-5xl md:text-8xl font-black tracking-tight text-stone-900 leading-none italic">Instant <span className="text-amber-500">Avilmilk</span> Mix.</h2>
-                <p className="text-lg text-stone-500 max-w-xl font-medium">Original Malabar recipe. Rehydrate in 60 seconds.</p>
+                <p className="text-lg text-stone-500 max-w-xl font-medium">Original Avilmilk recipe. Rehydrate in 60 seconds.</p>
                 <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
                   <button onClick={() => document.getElementById('shop').scrollIntoView({behavior:'smooth'})} className="bg-stone-900 text-white px-10 py-5 rounded-2xl font-black text-sm uppercase shadow-2xl hover:scale-105 transition-all">Shop Now</button>
                   <a href="https://wa.me/7306828565" target="_blank" rel="noopener noreferrer" className="bg-green-600 text-white px-8 py-5 rounded-2xl font-black text-sm uppercase shadow-xl hover:bg-green-700 transition-all flex items-center"><MessageCircle className="mr-2 w-5 h-5" /> WhatsApp</a>
                 </div>
               </div>
               <div className="relative">
-                <img src="https://images.unsplash.com/photo-1544145945-f904253d0c7b?auto=format&fit=crop&q=80&w=800" className="w-full max-w-md mx-auto rounded-[3rem] shadow-2xl rotate-2" alt="Avilmilk" />
                 <div className="absolute -bottom-16 left-1/2 -translate-x-1/2 md:-left-8 md:translate-x-0 bg-white p-6 rounded-3xl shadow-2xl border border-amber-50 min-w-[200px]">
                   <div className="flex items-center space-x-3">
                     <div className="bg-amber-100 p-2 rounded-full"><CheckCircle2 className="text-amber-600 w-5 h-5" /></div>
@@ -716,7 +718,7 @@ const App = () => {
       <footer className="bg-stone-900 text-white py-20 px-6 rounded-t-[4rem]">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-10 text-stone-900">
           <div>
-            <h1 className="text-2xl font-black tracking-tighter mb-4 italic uppercase text-white">Malabar <span className="text-amber-500">Avil</span></h1>
+            <h1 className="text-2xl font-black tracking-tighter mb-4 italic uppercase text-white">Der <span className="text-amber-500">Saftify</span></h1>
             <p className="text-stone-400 max-w-xs font-medium text-sm leading-relaxed">Kerala's favorite dessert beverage mix.</p>
           </div>
           <div className="space-y-6 text-center md:text-left">
@@ -724,7 +726,7 @@ const App = () => {
             <div className="flex gap-6 justify-center md:justify-start items-center">
               <button onClick={() => setShowAdminModal(true)} className="text-stone-500 hover:text-white text-[10px] font-black uppercase tracking-widest transition-all">Admin Panel</button>
               <span className="text-stone-700">|</span>
-              <p className="text-stone-600 text-[10px] font-black uppercase tracking-widest">© 2026 Kozhikode Store</p>
+              <p className="text-stone-600 text-[10px] font-black uppercase tracking-widest">© 2026 Malappuram Store</p>
             </div>
           </div>
         </div>
